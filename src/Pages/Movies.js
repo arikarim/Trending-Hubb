@@ -3,11 +3,14 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 import Paginationn from '../Components/Pagination/Paginationn';
 import TrendContent from '../Components/TrendContent';
+import Genres from '../Components/Genres';
 
 const Movies = props => {
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
   const [numOfPages, setNumOfPages] = useState();
+  const [genres, setGenres] = useState([]);
+  const [selectedGenres, setSelectedGenres] = useState([]);
 
 
   const fetchMovies = async () => {
@@ -24,6 +27,13 @@ const Movies = props => {
     <div>
 
       <span className='pagesTitle'>Movies</span>
+      <Genres
+        genres={genres} 
+        setGenres={setGenres} 
+        selectedGenres={selectedGenres} 
+        setSelectedGenres={setSelectedGenres} 
+        setPage={setPage}
+        type="movie" />
       <div className="trending">
           {
             content && content.map((c, key) =>
