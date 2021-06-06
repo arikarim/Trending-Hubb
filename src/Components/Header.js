@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Header = props => {
   return (
-    <span className="header py-2">🎥 Trending Hub 🎦 </span>
+    <span className="header">🎥 Trending Hub 🎦 </span>
   )
 }
 
