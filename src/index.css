@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  background-color: #39445a;
+  width: 100%;
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 5vw;
+  z-index: 100;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0px 1px 5px black;
+}
+
+.app {
+  background-color: #39445a;
+}
