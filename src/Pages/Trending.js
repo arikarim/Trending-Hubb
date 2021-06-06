@@ -20,9 +20,14 @@ const Trending = props => {
       <span className='pagesTitle'>Trending</span>
       <div className="trending">
         {
-          content && content.map((c,key) => {
-            <TrendContent data={c} />
-          })
+          content && content.map((c, key) =>
+           <TrendContent
+            key={c.id}
+            poster={c.poster_path}
+            title={c.title || c.name} 
+            date={c.first_air_date || c.release_date}
+            media_type={c.media_type}
+            vote_average={c.vote_average} />)
         }
       </div>
     </div>

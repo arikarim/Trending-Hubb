@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const TrendContent = ({data}) => {
   return (
     <div>
-      {data.name}
+      {data.title}
     </div>
   )
 }
