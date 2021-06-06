@@ -2,18 +2,20 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import TrendContent from '../Components/TrendContent';
+import Paginationn from '../Components/Pagination/Paginationn';
 
 const Trending = props => {
+  const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
 
   const fetchTrending = async () => {
-    const { data } = await axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}`);
+    const { data } = await axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`);
     setContent(data.results);
   }
 
   useEffect(() => {
    fetchTrending()
-  }, [])
+  }, [page])
 
   return (
     <div>
@@ -30,6 +32,7 @@ const Trending = props => {
             vote_average={c.vote_average} />)
         }
       </div>
+      <Paginationn setPage={setPage} />
     </div>
   )
 }
