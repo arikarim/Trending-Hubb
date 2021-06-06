@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Header = props => {
   return (
-    <span className="header">🎥 Trending Hub 🎦 </span>
+    <span onClick={() => window.scroll(0,0)} className="header">🎥 Trending Hub 🎦 </span>
   )
 }
 
