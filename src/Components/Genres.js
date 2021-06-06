@@ -46,7 +46,7 @@ const handleRemove= (genre) => {
          key={genre.id} 
          style={{margin: 2}} 
          clickable 
-          onClick={() => handleRemove(genre)} />
+          onDelete={() => handleRemove(genre)} />
       ))}
       {genres && genres.map((genre) => (
         <Chip
