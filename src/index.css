@@ -17,7 +17,7 @@
 @media (max-width: 1000px) {
   .header {
     padding-top: 15px;
-    font-size: 4.2vw;
+    font-size: 6.2vw;
   }
 }
 
@@ -31,7 +31,7 @@
 
 @media (max-width: 700px) {
   .app {
-    padding-top: 70px;
+    padding-top: 80px;
   }
 }
 
@@ -75,4 +75,26 @@
   padding-bottom: 3px;
   padding: 0 2px;
   padding-bottom: 3px;
+}
+
+.trending {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.pagesTitle {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  font-size: 2vw;
+  padding: 4px;
+  border-radius: 50px;
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  .pagesTitle {
+    font-size: 6.4vw;
+  }
 }
