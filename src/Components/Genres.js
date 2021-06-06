@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
+import { Chip } from '@material-ui/core'
 
 const Genres = ({
   genres,
   setGenres,
-  selectedgenres,
+  selectedGenres,
   setSelectedGenres,
-  setPages,
+  setPage,
   type,
 }) => {
 
@@ -24,9 +25,38 @@ useEffect(() => {
   }
 }, [])
 
+const handleAdd = (genre) => {
+  setSelectedGenres([...selectedGenres, genre]);
+  setGenres(genres.filter(g => g.id != genre.id));
+  setPage(1);
+};
+
+const handleRemove= (genre) => {
+  setSelectedGenres(selectedGenres.filter((g) => g.id != genre.id));
+  setGenres([...genres, genre]);
+  setPage(1);
+};
   return (
-    <div style={{padding: '6px 0'}}>
-      <Chip />
+    <div style={{padding: '6px 0', width: '100%'}}>
+      {selectedGenres && selectedGenres.map((genre) => (
+        <Chip
+         label={genre.name} 
+         size='small' 
+         color='secondary'
+         key={genre.id} 
+         style={{margin: 2}} 
+         clickable 
+          onClick={() => handleRemove(genre)} />
+      ))}
+      {genres && genres.map((genre) => (
+        <Chip
+         label={genre.name} 
+         size='small' 
+         key={genre.id} 
+         style={{margin: 2}} 
+         clickable 
+         onClick={() => handleAdd(genre)} />
+      ))}
     </div>
   )
 }
