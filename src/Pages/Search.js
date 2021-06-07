@@ -8,7 +8,7 @@ import Paginationn from '../Components/Pagination/Paginationn'
 const Search = props => {
   const [searchText, setSearchText] = useState("")
   const [type, setType] = useState(0);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [content, setContent] = useState();
   const [numOfPages, setNumOfPages] = useState(1);
 
