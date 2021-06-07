@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { Button, createMuiTheme, Tabs, TextField, ThemeProvider } from '@material-ui/core'
+import { Button, createMuiTheme, Tab, Tabs, TextField, ThemeProvider } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 
 const Search = props => {
-  const [type, setType] = useState(0)
+  const [searchText, setSearchText] = useState("")
+  const [type, setType] = useState(0);
+  const [page, setPage] = useState(1);
+  const [content, setContent] = useState();
+  const [numOfPages, setNumOfPages] = useState(1);
 
 
 const darkTheme = createMuiTheme({
@@ -15,6 +18,8 @@ const darkTheme = createMuiTheme({
     }
   }
 })
+
+const 
   return (
     
     <div>
@@ -24,7 +29,7 @@ const darkTheme = createMuiTheme({
             style={{flex:1}} 
             label="search"
             variant="filled"
-            // onChange={(e) => setSearchText(e.target.value)} 
+            onChange={(e) => setSearchText(e.target.value)} 
             />
 
           
@@ -33,8 +38,17 @@ const darkTheme = createMuiTheme({
           </Button>
         </div>
 
-        <Tabs value={type}>
-
+        <Tabs 
+          value={type} 
+          indicatorColor="primary" 
+          textColor="primary"
+          onChange={(event, newVal)=> {
+            setType(newVal)
+            setPage(1)
+          }}
+          >
+          <Tab style={{width: "50%" }} label="Search Movies" />
+          <Tab style={{width: "50%" }}label="Search TV Series" />
         </Tabs>
       </ThemeProvider>
     </div>
