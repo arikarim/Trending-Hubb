@@ -47,7 +47,7 @@ const featchSearch = async () => {
             />
 
           
-          <Button variant="contained" style={{marginLeft: 10}} >
+          <Button variant="contained" style={{marginLeft: 10}} onClick={featchSearch} >
             <SearchIcon />
           </Button>
         </div>
@@ -67,7 +67,7 @@ const featchSearch = async () => {
       </ThemeProvider>
       <div className="trending">
           {
-            content && content.map((c, key) =>
+            content && content.map((c, key) =>(
              <TrendContent
               key={c.id}
               poster={c.poster_path}
@@ -75,7 +75,10 @@ const featchSearch = async () => {
               date={c.first_air_date || c.release_date}
               media_type='Movie'
               vote_average={c.vote_average} />)
-          }
+            )}
+          {content &&
+           content.length===0&&
+           (type ? <h2>No Series Found</h2> : <h2>No Movies Found</h2>)}
         </div>
         {numOfPages > 1 &&
         <Paginationn setPage={setPage} numOfPages={numOfPages} />
