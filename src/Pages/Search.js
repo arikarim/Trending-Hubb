@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, createMuiTheme, Tab, Tabs, TextField, ThemeProvider } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
+import axios from 'axios'
 
 const Search = props => {
   const [searchText, setSearchText] = useState("")
@@ -19,7 +20,18 @@ const darkTheme = createMuiTheme({
   }
 })
 
-const 
+const featchSearch = async () => {
+  const {data} = await axios.get(`https://api.themoviedb.org/3/search/${type ? 'tv' : 'movie'}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchText}&page=${page}&include_adult=false`)
+
+  setContent(data.results);
+  setNumOfPages(data.total_pages);
+}
+
+  useEffect(() => {
+    window.scroll(0,0);
+    featchSearch();
+  }, [type, page])
+
   return (
     
     <div>
