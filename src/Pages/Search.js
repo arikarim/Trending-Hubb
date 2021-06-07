@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Button, createMuiTheme, Tab, Tabs, TextField, ThemeProvider } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 import axios from 'axios'
+import TrendContent from '../Components/TrendContent'
+import Paginationn from '../Components/Pagination/Paginationn'
 
 const Search = props => {
   const [searchText, setSearchText] = useState("")
@@ -63,6 +65,21 @@ const featchSearch = async () => {
           <Tab style={{width: "50%" }}label="Search TV Series" />
         </Tabs>
       </ThemeProvider>
+      <div className="trending">
+          {
+            content && content.map((c, key) =>
+             <TrendContent
+              key={c.id}
+              poster={c.poster_path}
+              title={c.title || c.name} 
+              date={c.first_air_date || c.release_date}
+              media_type='Movie'
+              vote_average={c.vote_average} />)
+          }
+        </div>
+        {numOfPages > 1 &&
+        <Paginationn setPage={setPage} numOfPages={numOfPages} />
+        }
     </div>
   )
 }
