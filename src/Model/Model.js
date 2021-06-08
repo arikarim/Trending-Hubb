@@ -60,9 +60,9 @@ export default function Model({children, media_type, id}) {
 
   return (
     <div>
-      <button className="media" type="button" onClick={handleOpen}>
+      <div className="media" type="button" onClick={handleOpen}>
         {children}
-      </button>
+      </div>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -78,39 +78,58 @@ export default function Model({children, media_type, id}) {
         <Fade in={open}>
           { content && (
           <div className={classes.paper}>
-            <div className='ContentModal'>
-              <img className='content_portrait' src={content.poster_path?`${img_500}/${content.poster_path}`:unavailable } />
-              <img className='ContentModal__landscape' src={content.backdrop_path?`${img_500}/${content.backdrop_path}`:unavailable } />
-
-              <div className='ContentModal__about'>
-                <span className="ContentModal__title">
-                  {content.name || content.title} (
+            <div className="ContentModal">
+                <img
+                  src={
+                    content.poster_path
+                      ? `${img_500}/${content.poster_path}`
+                      : unavailable
+                  }
+                  alt={content.name || content.title}
+                  className="ContentModal__portrait"
+                />
+                <img
+                  src={
+                    content.backdrop_path
+                      ? `${img_500}/${content.backdrop_path}`
+                      : unavailableLandscape
+                  }
+                  alt={content.name || content.title}
+                  className="ContentModal__landscape"
+                />
+                <div className="ContentModal__about">
+                  <span className="ContentModal__title">
+                    {content.name || content.title} (
                     {(
-                      content.first_air_date || content.release_date || '-----'
-                    ).substring(0,4)}
-                  )
-                </span>
-                {content.tagline && (
-                  <i className='tagline'>{content.tagline}</i>
-                )}
-                <span className='ContentModal__description'>
-                  {content.overview}
-                </span>
+                      content.first_air_date ||
+                      content.release_date ||
+                      "-----"
+                    ).substring(0, 4)}
+                    )
+                  </span>
+                  {content.tagline && (
+                    <i className="tagline">{content.tagline}</i>
+                  )}
 
-                <div>
+                  <span className="ContentModal__description">
+                    {content.overview}
+                  </span>
 
+                  <div>
+                    {/* <Carousel id={id} media_type={media_type} /> */}
+                  </div>
+
+                  <Button
+                    variant="contained"
+                    startIcon={<YouTube />}
+                    color="secondary"
+                    target="__blank"
+                    href={`https://www.youtube.com/watch?v=${video}`}
+                  >
+                    Watch the Trailer
+                  </Button>
                 </div>
-                <Button 
-                  variant='contained'
-                  startIcon={<YouTube />}
-                  color='secondary'
-                  target='__blank'
-                  href={`https://www.youtube.com/watch?v=${video}`}
-                   >
-                     Watch the Trailer
-                </Button>
               </div>
-            </div>
           </div>
           )}
         </Fade>
