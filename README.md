@@ -34,7 +34,7 @@ To get this project up and running locally, you must follow the steps from the [
 Navigate through the local folder where you want to clone the repository and run: <br>
 
 ```
-git clone https://github.com/arikarim/Weather-Wide 
+git clone https://github.com/arikarim/Trending-Hub 
 ```
 It will clone the repo to your local folder.
 
