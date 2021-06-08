@@ -6,15 +6,15 @@ import Genres from '../Components/Genres';
 import usegenres from '../hooks/useGenre';
 
 const Movies = props => {
+  const [genres, setGenres] = useState([]);
+  const [selectedGenres, setSelectedGenres] = useState([]);
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
   const [numOfPages, setNumOfPages] = useState();
-  const [genres, setGenres] = useState([]);
-  const [selectedGenres, setSelectedGenres] = useState([]);
-  const genreforURL = usegenres(selectedGenres)
+  const genreforURL = usegenres(selectedGenres);
 
   const fetchMovies = async () => {
-    const {data} = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate&page=${page}&with_genres=${genreforURL}`)
+    const {data} = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}`)
     
     setContent(data.results);
     setNumOfPages(data.total_pages)
@@ -37,14 +37,14 @@ const Movies = props => {
         type="movie" />
       <div className="trending">
           {
-            content && content.map((c, key) =>
+            content && content.map((c) =>
              <TrendContent
               key={c.id}
               id={c.id}
               poster={c.poster_path}
               title={c.title || c.name} 
               date={c.first_air_date || c.release_date}
-              media_type='Movie'
+              media_type='movie'
               vote_average={c.vote_average} />)
           }
         </div>
