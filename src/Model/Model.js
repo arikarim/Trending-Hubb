@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -27,6 +27,7 @@ export default function Model({children, media_type, id}) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [content, setContent] = useState();
+  const [video, setVideo] = useState()
 
   const handleOpen = () => {
     setOpen(true);
@@ -36,11 +37,22 @@ export default function Model({children, media_type, id}) {
     setOpen(false);
   };
 
-  const featchData = async () => {
+  const fetchData = async () => {
     const { data } = await axios.get(`https://api.themoviedb.org/3/${ media_type }/${id}?api_key=${process.env.REACT_APP_API_KEY}&lanfuage=en-US`)
     
-    setContent(data.results);
+    setContent(data);
   }
+
+  const fetchVideo = async () => {
+    const { data } = await axios.get(`https://api.themoviedb.org/3/${ media_type }/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&lanfuage=en-US`)
+    
+    setVideo(data.results[0]?.key)
+  };
+
+  useEffect(() => {
+    fetchData();
+    fetchVideo();
+  }, [])
 
   return (
     <div>
