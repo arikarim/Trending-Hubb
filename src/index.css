@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   text-transform: uppercase;
-  background-color: #39445a;
+  background-color: #101820FF;
   font-family: "Montserrat", sans-serif;
   font-size: 5vw;
   padding-bottom: 15px;
@@ -29,7 +29,7 @@
 
 .app {
   min-height: 100vh;
-  background-color: #39445a;
+  background-color: #101820FF;
   color: white;
   padding-top: 130px;
   padding-bottom: 70px;
@@ -47,14 +47,15 @@
   width: 200px;
   padding: 5px;
   margin: 5px 0;
-  background-color: #282c34;
+  color: #FEE715FF;
+  background-color: #101820FF ;
   border-radius: 10px;
   position: relative;
   font-family: "Montserrat", sans-serif;
 }
 
 .media:hover {
-  background-color: white;
+  background-color: rgb(72, 84, 104);
   color: black;
 }
 
