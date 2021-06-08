@@ -57,6 +57,7 @@ export default function Model({children, media_type, id}) {
   useEffect(() => {
     fetchData();
     fetchVideo();
+    // eslint-disable-next-line
   }, [])
 
   return (

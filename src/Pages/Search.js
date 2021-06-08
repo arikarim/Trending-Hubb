@@ -32,6 +32,7 @@ const featchSearch = async () => {
   useEffect(() => {
     window.scroll(0,0);
     featchSearch();
+    // eslint-disable-next-line
   }, [type, page])
 
   return (

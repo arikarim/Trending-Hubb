@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
 import usegenres from '../hooks/useGenre';
 import axios from 'axios';
 import Paginationn from '../Components/Pagination/Paginationn';
@@ -23,6 +22,7 @@ const Series = props => {
 
   useEffect(() => {
     fetchMovies()
+    // eslint-disable-next-line
   }, [page, selectedGenres])
   return (
     <div>

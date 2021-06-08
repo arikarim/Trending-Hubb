@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
 import axios from 'axios'
 import Paginationn from '../Components/Pagination/Paginationn';
 import TrendContent from '../Components/TrendContent';
@@ -22,7 +21,8 @@ const Movies = props => {
   }
 
   useEffect(() => {
-    fetchMovies()
+    fetchMovies();
+    // eslint-disable-next-line
   }, [page, selectedGenres])
   return (
     <div>

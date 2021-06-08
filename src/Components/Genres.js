@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import PropTypes from 'prop-types'
 import axios from 'axios'
 import { Chip } from '@material-ui/core'
 
@@ -22,17 +21,18 @@ useEffect(() => {
   fetchGenres();
   return () => {
     setGenres({});
-  }
+  };
+  // eslint-disable-next-line
 }, [])
 
 const handleAdd = (genre) => {
   setSelectedGenres([...selectedGenres, genre]);
-  setGenres(genres.filter(g => g.id != genre.id));
+  setGenres(genres.filter(g => g.id !== genre.id));
   setPage(1);
 };
 
 const handleRemove= (genre) => {
-  setSelectedGenres(selectedGenres.filter((g) => g.id != genre.id));
+  setSelectedGenres(selectedGenres.filter((g) => g.id !== genre.id));
   setGenres([...genres, genre]);
   setPage(1);
 };

@@ -7,12 +7,6 @@ import "./Carousel.css";
 
 const handleDragStart = (e) => e.preventDefault();
 
-const items = [
-  <img src="path-to-img" onDragStart={handleDragStart} />,
-  <img src="path-to-img" onDragStart={handleDragStart} />,
-  <img src="path-to-img" onDragStart={handleDragStart} />,
-];
-
  const Gallery = ({media_type, id}) => {
   const [credits, setCredits] = useState();
 
@@ -36,6 +30,7 @@ const items = [
 
   useEffect(() => {
     fetchCredits();
+    // eslint-disable-next-line
   }, [])
 
   const responsive = {
@@ -49,9 +44,16 @@ const items = [
       items: 7,
     },
   };
-  
+
   return (
-    <AliceCarousel autoPlay responsive={responsive} mouseTracking items={items} />
+    <AliceCarousel
+     autoPlay 
+     responsive={responsive} 
+     infinite
+     mouseTracking
+     disableButtonsControls
+     disableDotsControls
+     items={items} />
   );
 }
 
