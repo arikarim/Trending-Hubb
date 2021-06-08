@@ -3,7 +3,7 @@ import { img_300, unavailable } from '../config/config'
 import { Badge } from '@material-ui/core'
 import Model from '../Model/Model'
 
-const TrendContent = ({poster,title, date, media_type, vote_average}) => {
+const TrendContent = ({id, poster,title, date, media_type, vote_average}) => {
   return (
     <Model media_type={media_type} id={id}>
       <Badge badgeContent={vote_average} color={vote_average > 6 ? 'primary' : 'secondary'} />
