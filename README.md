@@ -14,7 +14,7 @@ Trending Hub is Movie website application built with `React`, Users can see tren
 ### Focus
 ![image](./src/img/s3.png)
 
-[Live Demo Link](https://github.io/Trending-Hub/)
+[Live Demo Link](https://arikarim.github.io/Trending-Hub/)
 
 ## Built With
 
