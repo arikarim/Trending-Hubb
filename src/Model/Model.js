@@ -116,7 +116,7 @@ export default function Model({children, media_type, id}) {
                   </span>
 
                   <div>
-                    {/* <Carousel id={id} media_type={media_type} /> */}
+                    <Carousel id={id} media_type={media_type} />
                   </div>
 
                   <Button
