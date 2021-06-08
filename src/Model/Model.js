@@ -11,14 +11,18 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    width: '90%',
+    height: '80%',
+    backgroundColor: '#39445a',
+    border: '1px solid #282c34',
+    borderRadius: 10,
+    color: 'white',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: theme.spacing(1, 1, 3),
   },
 }));
 
-export default function TransitionsModal() {
+export default function Model({children}) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -32,8 +36,8 @@ export default function TransitionsModal() {
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        react-transition-group
+      <button className="media" type="button" onClick={handleOpen}>
+        {children}
       </button>
       <Modal
         aria-labelledby="transition-modal-title"
