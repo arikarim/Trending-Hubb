@@ -46,7 +46,7 @@ It will clone the repo to your local folder.
 
 ## 🤝 contributing
 
-contributions, issues, and feature requests are welcome!<br/>feel free to check [issues page](https://github.com/arikarim/Weather-Wide/issues).
+contributions, issues, and feature requests are welcome!<br/>feel free to check [issues page](https://github.com/arikarim/Trending-Hub/issues).
 
 ## Author
 
