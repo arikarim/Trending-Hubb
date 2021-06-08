@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { img_300, noPicture } from '../../config/config';
@@ -16,7 +16,7 @@ const items = [
  const Gallery = ({media_type, id}) => {
   const [credits, setCredits] = useState();
 
-  const items = credits.map((c) => (
+  const items = credits?.map((c) => (
     <div className="carouselItem">
       <img
         src={c.profile_path ? `${img_300}/${c.profile_path}` : noPicture}
@@ -33,8 +33,25 @@ const items = [
     
     setCredits(data.cast)
   };
+
+  useEffect(() => {
+    fetchCredits();
+  }, [])
+
+  const responsive = {
+    0: {
+      items: 3,
+    },
+    512: {
+      items: 5,
+    },
+    1024: {
+      items: 7,
+    },
+  };
+  
   return (
-    <AliceCarousel mouseTracking items={items} />
+    <AliceCarousel autoPlay responsive={responsive} mouseTracking items={items} />
   );
 }
 

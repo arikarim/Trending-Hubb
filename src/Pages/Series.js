@@ -39,6 +39,7 @@ const Series = props => {
             content && content.map((c, key) =>
              <TrendContent
               key={c.id}
+              id={c.id}
               poster={c.poster_path}
               title={c.title || c.name} 
               date={c.first_air_date || c.release_date}
