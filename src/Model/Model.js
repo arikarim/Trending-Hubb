@@ -4,6 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import axios from 'axios';
+import { img_500, unavailable, unavailableLandscape } from '../config/config';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -72,10 +73,30 @@ export default function Model({children, media_type, id}) {
         }}
       >
         <Fade in={open}>
+          { content && (
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">Transition modal</h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
+            <div className='model'>
+              {/* <img className='content_portrait' src={content.poster_path?`${img_500}/${content.poster_path}`:unavailable } /> */}
+              <img className='content_landscape' src={content.backdrop_path?`${img_500}/${content.backdrop_path}`:unavailable } />
+
+              <div className='model-about'>
+                <span className="model-title">
+                  {content.name || content.title} (
+                    {(
+                      content.first_air_date || content.release_date || '-----'
+                    ).substring(0,4)}
+                  )
+                </span>
+                {content.tagline && (
+                  <i className='tagline'>{content.tagline}</i>
+                )}
+                <span className='model-description'>
+                  {content.overview}
+                </span>
+              </div>
+            </div>
           </div>
+          )}
         </Fade>
       </Modal>
     </div>
