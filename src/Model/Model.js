@@ -8,6 +8,7 @@ import { img_500, unavailable, unavailableLandscape } from '../config/config';
 import { Button } from '@material-ui/core';
 import { YouTube } from '@material-ui/icons';
 import './Model.css'
+import Carousel from '../Components/carousel/Carousel'
 
 const useStyles = makeStyles((theme) => ({
   modal: {
