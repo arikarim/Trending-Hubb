@@ -45,8 +45,10 @@
   display: flex;
   flex-direction: column;
   width: 200px;
+  min-height: 420px;
   padding: 5px;
   margin: 5px 0;
+  border: 1px solid black;
   color: #FEE715FF;
   background-color: #101820FF ;
   border-radius: 10px;
