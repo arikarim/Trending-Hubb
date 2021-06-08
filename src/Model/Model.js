@@ -7,6 +7,7 @@ import axios from 'axios';
 import { img_500, unavailable, unavailableLandscape } from '../config/config';
 import { Button } from '@material-ui/core';
 import { YouTube } from '@material-ui/icons';
+import './Model.css'
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -77,12 +78,12 @@ export default function Model({children, media_type, id}) {
         <Fade in={open}>
           { content && (
           <div className={classes.paper}>
-            <div className='model'>
-              {/* <img className='content_portrait' src={content.poster_path?`${img_500}/${content.poster_path}`:unavailable } /> */}
-              <img className='content_landscape' src={content.backdrop_path?`${img_500}/${content.backdrop_path}`:unavailable } />
+            <div className='ContentModal'>
+              <img className='content_portrait' src={content.poster_path?`${img_500}/${content.poster_path}`:unavailable } />
+              <img className='ContentModal__landscape' src={content.backdrop_path?`${img_500}/${content.backdrop_path}`:unavailable } />
 
-              <div className='model-about'>
-                <span className="model-title">
+              <div className='ContentModal__about'>
+                <span className="ContentModal__title">
                   {content.name || content.title} (
                     {(
                       content.first_air_date || content.release_date || '-----'
@@ -92,7 +93,7 @@ export default function Model({children, media_type, id}) {
                 {content.tagline && (
                   <i className='tagline'>{content.tagline}</i>
                 )}
-                <span className='model-description'>
+                <span className='ContentModal__description'>
                   {content.overview}
                 </span>
 
