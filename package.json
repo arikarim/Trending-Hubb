@@ -1,7 +1,7 @@
 {
   "name": "trending",
   "version": "0.1.0",
-  "homepage": "https://arikarim.github.io/Trending-Hub",
+  "homepage": "https://myusername.github.io/Trending-Hub",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
