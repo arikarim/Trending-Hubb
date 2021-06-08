@@ -5,6 +5,8 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import axios from 'axios';
 import { img_500, unavailable, unavailableLandscape } from '../config/config';
+import { Button } from '@material-ui/core';
+import { YouTube } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -93,6 +95,19 @@ export default function Model({children, media_type, id}) {
                 <span className='model-description'>
                   {content.overview}
                 </span>
+
+                <div>
+
+                </div>
+                <Button 
+                  variant='contained'
+                  startIcon={<YouTube />}
+                  color='secondary'
+                  target='__blank'
+                  href={`https://www.youtube.com/watch?v=${video}`}
+                   >
+                     Watch the Trailer
+                </Button>
               </div>
             </div>
           </div>
