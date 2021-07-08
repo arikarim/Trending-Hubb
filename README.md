@@ -3,6 +3,8 @@ Trending Hub is Movie website application built with React, Users can see trendi
 
 ![Hireable](https://img.shields.io/badge/Hireable-yes-success) ![](https://img.shields.io/badge/Mobile--responsive-yes-green) 
 
+
+
 ## Screenshots of the app:
 
 ### Trending
