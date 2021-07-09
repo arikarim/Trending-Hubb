@@ -7,6 +7,7 @@ Trending Hub is Movie website application built with React, Users can see trendi
 
 ## Screenshots of the app:
 
+
 ### Trending
 ![image](./src/img/s1.png)
 
