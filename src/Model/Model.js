@@ -80,7 +80,7 @@ export default function Model({ children, media_type, id }) {
 
   return (
     <div>
-      <div className="media" type="button" onClick={handleOpen}>
+      <div className="media mx-auto" type="button" onClick={handleOpen}>
         {children}
       </div>
       <Modal
