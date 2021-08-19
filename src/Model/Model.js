@@ -47,30 +47,28 @@ export default function Model({ children, media_type, id }) {
   };
 
   const fetchData = async () => {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&lanfuage=en-US`
-    );
+    try {
+      const { data } = await axios.get(
+        `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&lanfuage=en-US`
+      );
 
-    setContent(data);
+      setContent(data);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const fetchVideo = async () => {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&lanfuage=en-US`
-    );
+    try {
+      const { data } = await axios.get(
+        `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&lanfuage=en-US`
+      );
 
-    setVideo(data.results[0]?.key);
+      setVideo(data.results[0]?.key);
+    } catch (e) {
+      console.log(e);
+    }
   };
-
-  // const onWatch = () => {
-  //   <Link
-  //     aria-disabled="true"
-  //     className="btn btn-primary my-2"
-  //     to={`/watch/${id}/${season}/${ep}`}
-  //   >
-  //     watch
-  //   </Link>;
-  // };
 
   useEffect(() => {
     fetchData();
@@ -161,12 +159,14 @@ export default function Model({ children, media_type, id }) {
                         }
                       >
                         <input
+                          className="form-control my-2 inputs"
                           type="text"
                           placeholder="season"
                           onChange={(e) => setSeason(e.target.value)}
                           required
                         />
                         <input
+                          className="form-control my-2 inputs"
                           type="text"
                           placeholder="episode"
                           onChange={(e) => setEp(e.target.value)}

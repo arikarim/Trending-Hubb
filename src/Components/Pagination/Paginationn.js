@@ -1,41 +1,41 @@
-import React from 'react'
-import Pagination from '@material-ui/lab/Pagination';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import React from "react";
+import Pagination from "@material-ui/lab/Pagination";
+import { createTheme, ThemeProvider } from "@material-ui/core";
 // import { dark } from '@material-ui/core/styles/createPalette';
 
-const darkTheme = createMuiTheme({
-  palette:{
-    type: 'dark',
-  }
-})
+const darkTheme = createTheme({
+  palette: {
+    type: "dark",
+  },
+});
 
-const Paginationn = ({setPage, numOfPages= 15}) => {
+const Paginationn = ({ setPage, numOfPages = 15 }) => {
   const handlePageChange = (page) => {
     setPage(page);
-    window.scroll(0,0);
-  }
+    window.scroll(0, 0);
+  };
   return (
-    <div 
+    <div
       style={{
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
         marginTop: 10,
-      }} >
-        <ThemeProvider theme={darkTheme}>
-          <Pagination
-           count={numOfPages} 
-           onChange={(e) => handlePageChange(e.target.textContent)}
-           hideNextButton
-           hidePrevButton
-           color='secondary' />
-        </ThemeProvider>
+      }}
+    >
+      <ThemeProvider theme={darkTheme}>
+        <Pagination
+          count={numOfPages}
+          onChange={(e) => handlePageChange(e.target.textContent)}
+          hideNextButton
+          hidePrevButton
+          color="secondary"
+        />
+      </ThemeProvider>
     </div>
-  )
-}
+  );
+};
 
-Paginationn.propTypes = {
+Paginationn.propTypes = {};
 
-}
-
-export default Paginationn
+export default Paginationn;
