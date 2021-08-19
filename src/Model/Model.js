@@ -9,7 +9,7 @@ import { Button } from "@material-ui/core";
 import { YouTube } from "@material-ui/icons";
 import "./Model.css";
 import Carousel from "../Components/carousel/Carousel";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -34,6 +34,9 @@ export default function Model({ children, media_type, id }) {
   const [open, setOpen] = React.useState(false);
   const [content, setContent] = useState();
   const [video, setVideo] = useState();
+  const [season, setSeason] = useState();
+  const [ep, setEp] = useState();
+  const history = useHistory();
 
   const handleOpen = () => {
     setOpen(true);
@@ -58,6 +61,16 @@ export default function Model({ children, media_type, id }) {
 
     setVideo(data.results[0]?.key);
   };
+
+  // const onWatch = () => {
+  //   <Link
+  //     aria-disabled="true"
+  //     className="btn btn-primary my-2"
+  //     to={`/watch/${id}/${season}/${ep}`}
+  //   >
+  //     watch
+  //   </Link>;
+  // };
 
   useEffect(() => {
     fetchData();
@@ -135,9 +148,36 @@ export default function Model({ children, media_type, id }) {
                   >
                     Watch the Trailer
                   </Button>
-                  <Link className="btn btn-primary my-2" to={`/watch/${id}`}>
-                    watch
-                  </Link>
+                  {media_type === "movie" && (
+                    <Link className="btn btn-primary my-2" to={`/watch/${id}`}>
+                      watch
+                    </Link>
+                  )}
+                  {media_type === "tv" && (
+                    <div>
+                      <form
+                        onSubmit={() =>
+                          history.push(`/watch/${id}/${season}/${ep}`)
+                        }
+                      >
+                        <input
+                          type="text"
+                          placeholder="season"
+                          onChange={(e) => setSeason(e.target.value)}
+                          required
+                        />
+                        <input
+                          type="text"
+                          placeholder="episode"
+                          onChange={(e) => setEp(e.target.value)}
+                          required
+                        />
+                        <button className="btn btn-primary my-2" type="submit">
+                          watch
+                        </button>
+                      </form>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

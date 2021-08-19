@@ -8,6 +8,7 @@ import Search from "./Pages/Search";
 import Series from "./Pages/Series";
 import Movies from "./Pages/Movies";
 import Watch from "./Pages/Watch";
+import WatchSeries from "./Pages/WatchSeries";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
             <Route path="/movies" component={Movies} />
             <Route path="/series" component={Series} />
             <Route path="/search" component={Search} />
-            <Route path="/watch/:id" component={Watch} />
+            <Route exact path="/watch/:id" component={Watch} />
+            <Route path="/watch/:id/:season/:ep" component={WatchSeries} />
             <Route path="/" exact component={Trending} />
           </Switch>
         </Container>
