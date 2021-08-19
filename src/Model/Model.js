@@ -1,38 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-import axios from 'axios';
-import { img_500, unavailable, unavailableLandscape } from '../config/config';
-import { Button } from '@material-ui/core';
-import { YouTube } from '@material-ui/icons';
-import './Model.css'
-import Carousel from '../Components/carousel/Carousel'
+import React, { useEffect, useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import axios from "axios";
+import { img_500, unavailable, unavailableLandscape } from "../config/config";
+import { Button } from "@material-ui/core";
+import { YouTube } from "@material-ui/icons";
+import "./Model.css";
+import Carousel from "../Components/carousel/Carousel";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   paper: {
-    width: '90%',
-    height: '80%',
-    backgroundColor: '#39445a',
-    border: '1px solid #282c34',
+    width: "90%",
+    height: "80%",
+    backgroundColor: "#39445a",
+    border: "1px solid #282c34",
     borderRadius: 10,
-    color: 'white',
+    color: "white",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(1, 1, 3),
   },
 }));
 
-export default function Model({children, media_type, id}) {
+export default function Model({ children, media_type, id }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [content, setContent] = useState();
-  const [video, setVideo] = useState()
+  const [video, setVideo] = useState();
 
   const handleOpen = () => {
     setOpen(true);
@@ -43,22 +44,26 @@ export default function Model({children, media_type, id}) {
   };
 
   const fetchData = async () => {
-    const { data } = await axios.get(`https://api.themoviedb.org/3/${ media_type }/${id}?api_key=${process.env.REACT_APP_API_KEY}&lanfuage=en-US`)
-    
+    const { data } = await axios.get(
+      `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&lanfuage=en-US`
+    );
+
     setContent(data);
-  }
+  };
 
   const fetchVideo = async () => {
-    const { data } = await axios.get(`https://api.themoviedb.org/3/${ media_type }/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&lanfuage=en-US`)
-    
-    setVideo(data.results[0]?.key)
+    const { data } = await axios.get(
+      `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&lanfuage=en-US`
+    );
+
+    setVideo(data.results[0]?.key);
   };
 
   useEffect(() => {
     fetchData();
     fetchVideo();
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   return (
     <div>
@@ -78,9 +83,9 @@ export default function Model({children, media_type, id}) {
         }}
       >
         <Fade in={open}>
-          { content && (
-          <div className={classes.paper}>
-            <div className="ContentModal">
+          {content && (
+            <div className={classes.paper}>
+              <div className="ContentModal">
                 <img
                   src={
                     content.poster_path
@@ -130,9 +135,12 @@ export default function Model({children, media_type, id}) {
                   >
                     Watch the Trailer
                   </Button>
+                  <Link className="btn btn-primary my-2" to={`/watch/${id}`}>
+                    watch
+                  </Link>
                 </div>
               </div>
-          </div>
+            </div>
           )}
         </Fade>
       </Modal>
