@@ -160,14 +160,14 @@ export default function Model({ children, media_type, id }) {
                       >
                         <input
                           className="form-control my-2 inputs"
-                          type="text"
+                          type="number"
                           placeholder="season"
                           onChange={(e) => setSeason(e.target.value)}
                           required
                         />
                         <input
                           className="form-control my-2 inputs"
-                          type="text"
+                          type="number"
                           placeholder="episode"
                           onChange={(e) => setEp(e.target.value)}
                           required
