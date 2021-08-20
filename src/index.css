@@ -43,7 +43,7 @@
 .media {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  /* width: 200px; */
   min-height: 420px;
   padding: 5px;
   margin: 5px 0;
@@ -60,11 +60,11 @@
   color: black;
 }
 
-@media (max-width: 550px) {
+/* @media (max-width: 550px) {
   .media {
     width: 46%;
   }
-}
+} */
 
 .poster {
   border-radius: 10px;
