@@ -22,7 +22,7 @@ function App() {
             <Route path="/search" component={Search} />
             <Route exact path="/watch/:id" component={Watch} />
             <Route path="/watch/:id/:season/:ep" component={WatchSeries} />
-            <Route path="/Trending-Hub/" exact component={Trending} />
+            <Route path="/" exact component={Trending} />
           </Switch>
         </Container>
       </div>
