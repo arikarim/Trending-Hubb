@@ -12,7 +12,7 @@ import WatchSeries from "./Pages/WatchSeries";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Trending-Hubb">
       <Header />
       <div className="app">
         <Container className="cont">
@@ -26,7 +26,7 @@ function App() {
               path="/watch/:id/:season/:ep"
               component={WatchSeries}
             />
-            <Route exact path="/Trending-Hub/" component={Trending} />
+            <Route path="/" component={Trending} />
           </Switch>
         </Container>
       </div>
