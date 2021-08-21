@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Trending-Hub/static/css/main.0492f270.chunk.css",
-    "main.js": "/Trending-Hub/static/js/main.752f3167.chunk.js",
-    "main.js.map": "/Trending-Hub/static/js/main.752f3167.chunk.js.map",
-    "runtime-main.js": "/Trending-Hub/static/js/runtime-main.220e6d22.js",
-    "runtime-main.js.map": "/Trending-Hub/static/js/runtime-main.220e6d22.js.map",
-    "static/css/2.af3ab7ac.chunk.css": "/Trending-Hub/static/css/2.af3ab7ac.chunk.css",
-    "static/js/2.4185d6e0.chunk.js": "/Trending-Hub/static/js/2.4185d6e0.chunk.js",
-    "static/js/2.4185d6e0.chunk.js.map": "/Trending-Hub/static/js/2.4185d6e0.chunk.js.map",
-    "index.html": "/Trending-Hub/index.html",
-    "service-worker.js": "/Trending-Hub/service-worker.js",
-    "service-worker.js.map": "/Trending-Hub/service-worker.js.map",
-    "static/css/2.af3ab7ac.chunk.css.map": "/Trending-Hub/static/css/2.af3ab7ac.chunk.css.map",
-    "static/css/main.0492f270.chunk.css.map": "/Trending-Hub/static/css/main.0492f270.chunk.css.map",
-    "static/js/2.4185d6e0.chunk.js.LICENSE.txt": "/Trending-Hub/static/js/2.4185d6e0.chunk.js.LICENSE.txt"
+    "main.css": "/Trending-Hubb/static/css/main.0492f270.chunk.css",
+    "main.js": "/Trending-Hubb/static/js/main.c33519b4.chunk.js",
+    "main.js.map": "/Trending-Hubb/static/js/main.c33519b4.chunk.js.map",
+    "runtime-main.js": "/Trending-Hubb/static/js/runtime-main.416ebecf.js",
+    "runtime-main.js.map": "/Trending-Hubb/static/js/runtime-main.416ebecf.js.map",
+    "static/css/2.af3ab7ac.chunk.css": "/Trending-Hubb/static/css/2.af3ab7ac.chunk.css",
+    "static/js/2.4185d6e0.chunk.js": "/Trending-Hubb/static/js/2.4185d6e0.chunk.js",
+    "static/js/2.4185d6e0.chunk.js.map": "/Trending-Hubb/static/js/2.4185d6e0.chunk.js.map",
+    "index.html": "/Trending-Hubb/index.html",
+    "service-worker.js": "/Trending-Hubb/service-worker.js",
+    "service-worker.js.map": "/Trending-Hubb/service-worker.js.map",
+    "static/css/2.af3ab7ac.chunk.css.map": "/Trending-Hubb/static/css/2.af3ab7ac.chunk.css.map",
+    "static/css/main.0492f270.chunk.css.map": "/Trending-Hubb/static/css/main.0492f270.chunk.css.map",
+    "static/js/2.4185d6e0.chunk.js.LICENSE.txt": "/Trending-Hubb/static/js/2.4185d6e0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.220e6d22.js",
+    "static/js/runtime-main.416ebecf.js",
     "static/css/2.af3ab7ac.chunk.css",
     "static/js/2.4185d6e0.chunk.js",
     "static/css/main.0492f270.chunk.css",
-    "static/js/main.752f3167.chunk.js"
+    "static/js/main.c33519b4.chunk.js"
   ]
 }
