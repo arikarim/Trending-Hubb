@@ -17,16 +17,16 @@ function App() {
       <div className="app">
         <Container className="cont">
           <Switch>
-            <Route path="/movies" component={Movies} />
-            <Route path="/series" component={Series} />
-            <Route path="/search" component={Search} />
+            <Route exact path="/movies" component={Movies} />
+            <Route exact path="/series" component={Series} />
+            <Route exact path="/search" component={Search} />
             <Route exact path="/watch/:id" component={Watch} />
-            <Route path="/watch/:id/:season/:ep" component={WatchSeries} />
             <Route
-              path="/
-Trending-Hub/home"
-              component={Trending}
+              exact
+              path="/watch/:id/:season/:ep"
+              component={WatchSeries}
             />
+            <Route exact path="/Trending-Hub/" component={Trending} />
           </Switch>
         </Container>
       </div>
