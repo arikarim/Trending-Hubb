@@ -8,3 +8,12 @@ export const popularMoviesReducer = (state = [], action) => {
       return state;
   }
 };
+
+export const popularTvReducer = (state = [], action) => {
+  switch (action.type) {
+    case "POPULAR":
+      return [...action.popular];
+    default:
+      return state;
+  }
+};

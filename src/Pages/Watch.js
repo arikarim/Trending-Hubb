@@ -18,7 +18,7 @@ const Watch = () => {
         allowFullScreen
         frameBorder="0"
       />
-      <h1 className="text-center">Popular Movies</h1>
+      <h1 className="text-center my-3">Popular Movies</h1>
       <div className="trending">
         {popular &&
           popular.map((c, key) => (

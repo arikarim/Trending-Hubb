@@ -11,7 +11,7 @@ import Watch from "./Pages/Watch";
 import WatchSeries from "./Pages/WatchSeries";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { createPopularMovies } from "./Actions/Popular";
+import { createPopularMovies, createPopularTv } from "./Actions/Popular";
 import { useEffect } from "react";
 function App() {
   const dispatch = useDispatch();
@@ -21,8 +21,20 @@ function App() {
       const response = await axios.get(
         `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
       );
-      console.log(response.data.results);
+      // console.log(response);
       dispatch(createPopularMovies(response.data.results));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchPopularTv = async () => {
+    try {
+      const response = await axios.get(
+        ` https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+      );
+      console.log(response.data);
+      dispatch(createPopularTv(response.data.results));
     } catch (error) {
       console.log(error);
     }
@@ -30,6 +42,7 @@ function App() {
 
   useEffect(() => {
     fetchPopularMovies();
+    fetchPopularTv();
   }, []);
   return (
     <BrowserRouter basename="/Trending-Hubb">

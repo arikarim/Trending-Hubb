@@ -13,7 +13,7 @@
   text-transform: uppercase;
   background-color: #101820ff;
   font-family: "Montserrat", sans-serif;
-  font-size: 5vw;
+  font-size: 30px;
   padding-bottom: 15px;
   box-shadow: 0px 1px 5px black;
   color: white;
@@ -23,14 +23,14 @@
 @media (max-width: 1000px) {
   .header {
     padding-top: 15px;
-    font-size: 6.2vw;
+    font-size: 30px;
   }
 }
 
 .app {
   background-color: #101820ff;
   color: white;
-  padding-top: 130px;
+  padding-top: 70px;
   padding-bottom: 70px;
 }
 
