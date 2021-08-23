@@ -16,34 +16,32 @@ import { useEffect } from "react";
 function App() {
   const dispatch = useDispatch();
 
-  const fetchPopularMovies = async () => {
-    try {
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
-      );
-      // console.log(response);
-      dispatch(createPopularMovies(response.data.results));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const fetchPopularTv = async () => {
-    try {
-      const response = await axios.get(
-        ` https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
-      );
-      console.log(response.data);
-      dispatch(createPopularTv(response.data.results));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const fetchPopularMovies = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+        );
+        dispatch(createPopularMovies(response.data.results));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    const fetchPopularTv = async () => {
+      try {
+        const response = await axios.get(
+          ` https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+        );
+        dispatch(createPopularTv(response.data.results));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     fetchPopularMovies();
     fetchPopularTv();
-  }, []);
+  }, [dispatch]);
   return (
     <BrowserRouter basename="/Trending-Hubb">
       <Header />
@@ -67,6 +65,4 @@ function App() {
     </BrowserRouter>
   );
 }
-// aa
-// ok
 export default App;
