@@ -29,11 +29,16 @@ const Series = (props) => {
   }, [page, selectedGenres]);
 
   const styles = {
-    backgroundImage: `url(${img_500 + content[0]?.backdrop_path})`,
+    backgroundImage: `url(${img_500}${
+      content[0]?.backdrop_path || content[1]?.backdrop_path
+    })`,
     backgroundSize: "100% 100%",
     backgroundRepeat: "no-repeat",
     width: "100%",
   };
+  {
+    content && console.log(content);
+  }
   return (
     <div>
       <div style={styles} className="main"></div>
@@ -50,6 +55,7 @@ const Series = (props) => {
         {content &&
           content.map((c, key) => (
             <TrendContent
+              content={c}
               key={c.id}
               id={c.id}
               poster={c.poster_path}

@@ -48,17 +48,12 @@
   padding: 5px;
   margin: 5px 0;
   border: 1px solid black;
-  color: red;
+  color: rgb(153, 150, 150);
   background-color: rgb(64, 65, 65);
   border-radius: 10px;
   position: relative;
   font-family: "Montserrat", sans-serif;
 }
-/* @media (max-width: 550px) {
-  .media {
-    width: 46%;
-  }
-} */
 
 .poster {
   border-radius: 10px;
@@ -148,4 +143,20 @@ body {
 
 .tit {
   color: gold;
+}
+
+.seasons li {
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  font-weight: bold;
+  background-color: rgb(87, 87, 87);
+}
+
+.episodes li {
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  font-weight: bold;
+  background-color: rgb(87, 87, 87);
 }

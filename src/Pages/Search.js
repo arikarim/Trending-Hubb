@@ -86,6 +86,7 @@ const Search = (props) => {
         {content &&
           content.map((c, key) => (
             <TrendContent
+              content={c}
               key={c.id}
               id={c.id}
               poster={c.poster_path}

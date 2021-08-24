@@ -29,7 +29,9 @@ const Movies = (props) => {
   }, [page, selectedGenres]);
 
   const styles = {
-    backgroundImage: `url(${img_500 + content[0]?.backdrop_path})`,
+    backgroundImage: `url(${img_500}${
+      content[0]?.backdrop_path || content[1]?.backdrop_path
+    })`,
     backgroundSize: "100% 100%",
     backgroundRepeat: "no-repeat",
     width: "100%",
@@ -50,6 +52,7 @@ const Movies = (props) => {
         {content &&
           content.map((c) => (
             <TrendContent
+              content={c}
               key={c.id}
               id={c.id}
               poster={c.poster_path}

@@ -20,7 +20,9 @@ const Trending = (props) => {
     // eslint-disable-next-line
   }, [page]);
   const styles = {
-    backgroundImage: `url(${img_500 + content[0]?.backdrop_path})`,
+    backgroundImage: `url(${img_500}${
+      content[0]?.backdrop_path || content[1]?.backdrop_path
+    })`,
     backgroundSize: "100% 100%",
     backgroundRepeat: "no-repeat",
     width: "100%",

@@ -113,17 +113,20 @@ export default function Model({ c, children, media_type, id }) {
         >
           <h4 className="text-center tit">{c?.original_title}</h4>
           <p className="desc">
-            <span className="span-color mr-2">Vote:</span> {c?.vote_average}
+            <span className="span-color mr-2">Vote:</span>{" "}
+            {c?.vote_average || "N/A"}
           </p>
           <p className="desc">
             <span className="span-color mr-2">Lamguage:</span>{" "}
-            {c?.original_language}
+            {c?.original_language || "N/A"}
           </p>
           <p className="desc">
-            <span className="span-color mr-2">Release:</span> {c?.release_date}
+            <span className="span-color mr-2">Release:</span>{" "}
+            {c?.release_date || "N/A"}
           </p>
           <p className="desc">
-            <span className="span-color mr-2">Overview:</span> {c?.overview}
+            <span className="span-color mr-2">Overview:</span>{" "}
+            {c?.overview || "N/A"}
           </p>
         </div>
       </ReactCardFlip>
