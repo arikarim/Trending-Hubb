@@ -39,7 +39,7 @@ export default function Model({ c, children, media_type, id }) {
   const [season, setSeason] = useState();
   const [ep, setEp] = useState();
   const history = useHistory();
-  const [style, setStyle] = useState({});
+  // const [style, setStyle] = useState({});
   const [fliped, setFliped] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -79,28 +79,28 @@ export default function Model({ c, children, media_type, id }) {
     // eslint-disable-next-line
   }, []);
 
+  const style = {
+    backgroundImage: `linear-gradient(to right, rgba(0,22,78,.8), rgba(0,22,48,.8)),url(${
+      img_500 + c?.poster_path
+    })`,
+    backgroundSize: "cover",
+  };
+
   const onHover = () => {
     setFliped(true);
   };
 
   const onLeave = () => {
     setFliped(false);
-    setStyle({});
   };
 
-  // const museOver = () => {
-  //   setStyle({
-  //     color: "white",
-  //     curser: "pointer",
-  //   });
-  // };
   return (
     <div className="position-relative col-10 px-md-3 col-md-4 col-lg-3">
       <ReactCardFlip
-        flipSpeedBackToFront={0.2}
-        flipSpeedFrontToBack={0.2}
-        isFlipped={fliped == true ? fliped : false}
-        flipDirection="horizontal"
+        flipSpeedBackToFront={0.4}
+        flipSpeedFrontToBack={0.4}
+        isFlipped={fliped}
+        flipDirection="vertical"
       >
         <div onMouseEnter={onHover} className="media mx-auto" type="button">
           {children}
@@ -108,28 +108,23 @@ export default function Model({ c, children, media_type, id }) {
         <div
           onClick={handleOpen}
           style={style}
-          className="media mx-auto"
-          onMouseOut={onLeave}
+          className="media mx-auto d-flex flex-column align-items-center"
+          onMouseLeave={onLeave}
         >
-          <div>
-            <h4 className="text-center">{c?.original_title}</h4>
-            <p className="desc">
-              <span className="span-color mr-2">Vote:</span> {c?.vote_average}
-            </p>
-            <p className="desc">
-              <span className="span-color mr-2">Lamguage:</span>{" "}
-              {c?.original_language}
-            </p>
-            <p className="desc">
-              <span className="span-color mr-2">Release:</span>{" "}
-              {c?.release_date}
-            </p>
-            <p className="desc">
-              <span className="span-color mr-2">Overview:</span> {c?.overview}
-            </p>
-          </div>
-
-          {c && console.log(c)}
+          <h4 className="text-center tit">{c?.original_title}</h4>
+          <p className="desc">
+            <span className="span-color mr-2">Vote:</span> {c?.vote_average}
+          </p>
+          <p className="desc">
+            <span className="span-color mr-2">Lamguage:</span>{" "}
+            {c?.original_language}
+          </p>
+          <p className="desc">
+            <span className="span-color mr-2">Release:</span> {c?.release_date}
+          </p>
+          <p className="desc">
+            <span className="span-color mr-2">Overview:</span> {c?.overview}
+          </p>
         </div>
       </ReactCardFlip>
       <Modal

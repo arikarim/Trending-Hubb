@@ -54,11 +54,6 @@
   position: relative;
   font-family: "Montserrat", sans-serif;
 }
-
-.media:hover {
-  color: rgb(255, 255, 255);
-}
-
 /* @media (max-width: 550px) {
   .media {
     width: 46%;
@@ -145,4 +140,12 @@ body {
 .span-color {
   font-weight: bolder;
   color: rgb(255, 255, 255);
+}
+
+.desc {
+  color: rgb(196, 196, 196);
+}
+
+.tit {
+  color: gold;
 }
