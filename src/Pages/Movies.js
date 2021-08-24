@@ -4,6 +4,7 @@ import Paginationn from "../Components/Pagination/Paginationn";
 import TrendContent from "../Components/TrendContent";
 import Genres from "../Components/Genres";
 import usegenres from "../hooks/useGenre";
+import { img_500 } from "../config/config";
 
 const Movies = (props) => {
   const [genres, setGenres] = useState([]);
@@ -26,8 +27,16 @@ const Movies = (props) => {
     fetchMovies();
     // eslint-disable-next-line
   }, [page, selectedGenres]);
+
+  const styles = {
+    backgroundImage: `url(${img_500 + content[0]?.backdrop_path})`,
+    backgroundSize: "100% 100%",
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+  };
   return (
     <div>
+      <div style={styles} className="main"></div>
       <span className="pagesTitle">Movies</span>
       <Genres
         genres={genres}

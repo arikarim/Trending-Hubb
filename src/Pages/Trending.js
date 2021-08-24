@@ -20,9 +20,7 @@ const Trending = (props) => {
     // eslint-disable-next-line
   }, [page]);
   const styles = {
-    backgroundImage: `linear-gradient(to right, rgba(218,165,32, 0.52), rgba(255,215,0, 0.4)),url(${
-      img_500 + content[0]?.backdrop_path
-    })`,
+    backgroundImage: `url(${img_500 + content[0]?.backdrop_path})`,
     backgroundSize: "100% 100%",
     backgroundRepeat: "no-repeat",
     width: "100%",

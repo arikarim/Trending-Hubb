@@ -77,7 +77,7 @@ export default function Model({ children, media_type, id }) {
   }, []);
 
   return (
-    <div className="col-10 px-md-3 col-md-6 col-lg-3">
+    <div className="col-10 px-md-3 col-md-4 col-lg-3">
       <div className="media mx-auto" type="button" onClick={handleOpen}>
         {children}
       </div>
