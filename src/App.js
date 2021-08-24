@@ -52,11 +52,7 @@ function App() {
             <Route exact path="/series" component={Series} />
             <Route exact path="/search" component={Search} />
             <Route exact path="/watch/:id" component={Watch} />
-            <Route
-              exact
-              path="/watch/:id/:season/:ep"
-              component={WatchSeries}
-            />
+            <Route exact path="/watchTv/:id" component={WatchSeries} />
             <Route path="/" component={Trending} />
           </Switch>
         </Container>

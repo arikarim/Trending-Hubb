@@ -201,31 +201,12 @@ export default function Model({ c, children, media_type, id }) {
                     </Link>
                   )}
                   {media_type === "tv" && (
-                    <div>
-                      <form
-                        onSubmit={() =>
-                          history.push(`/watch/${id}/${season}/${ep}`)
-                        }
-                      >
-                        <input
-                          className="form-control my-2 inputs"
-                          type="number"
-                          placeholder="season"
-                          onChange={(e) => setSeason(e.target.value)}
-                          required
-                        />
-                        <input
-                          className="form-control my-2 inputs"
-                          type="number"
-                          placeholder="episode"
-                          onChange={(e) => setEp(e.target.value)}
-                          required
-                        />
-                        <button className="btn btn-primary my-2" type="submit">
-                          watch
-                        </button>
-                      </form>
-                    </div>
+                    <Link
+                      className="btn btn-primary my-2"
+                      to={`/watchTv/${id}`}
+                    >
+                      watch
+                    </Link>
                   )}
                 </div>
               </div>
