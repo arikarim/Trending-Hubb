@@ -141,3 +141,8 @@ body {
   justify-self: start;
   align-self: start;
 }
+
+.span-color {
+  font-weight: bolder;
+  color: rgb(255, 255, 255);
+}

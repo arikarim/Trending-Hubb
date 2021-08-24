@@ -111,18 +111,24 @@ export default function Model({ c, children, media_type, id }) {
           className="media mx-auto"
           onMouseOut={onLeave}
         >
-          <h4 className="text-center">{c?.original_title}</h4>
-          <p className="desc">Vote: {c?.vote_average}</p>
-          <p className="desc">Lamguage: {c?.original_language}</p>
-          <p className="desc">Release: {c?.release_date}</p>
-          {/* <img
-            src={
-              c.poster_path
-                ? `${img_500}/${c.poster_path}`
-                : unavailableLandscape
-            }
-            className="ContentModal__landscape"
-          /> */}
+          <div>
+            <h4 className="text-center">{c?.original_title}</h4>
+            <p className="desc">
+              <span className="span-color mr-2">Vote:</span> {c?.vote_average}
+            </p>
+            <p className="desc">
+              <span className="span-color mr-2">Lamguage:</span>{" "}
+              {c?.original_language}
+            </p>
+            <p className="desc">
+              <span className="span-color mr-2">Release:</span>{" "}
+              {c?.release_date}
+            </p>
+            <p className="desc">
+              <span className="span-color mr-2">Overview:</span> {c?.overview}
+            </p>
+          </div>
+
           {c && console.log(c)}
         </div>
       </ReactCardFlip>
