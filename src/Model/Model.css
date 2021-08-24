@@ -51,9 +51,10 @@
 
 .ContentModal__description {
   display: flex;
+  background-color: rgb(32, 28, 28);
   height: 40%;
   overflow-y: scroll;
-  padding: 15px;
+  padding: 30px;
   border-radius: 20px;
   scrollbar-width: thin; /* Firefox */
   box-shadow: inset 0 0 5px #000000;

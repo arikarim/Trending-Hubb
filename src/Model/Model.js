@@ -10,6 +10,8 @@ import { YouTube } from "@material-ui/icons";
 import "./Model.css";
 import Carousel from "../Components/carousel/Carousel";
 import { Link, useHistory } from "react-router-dom";
+import ReactCardFlip from "react-card-flip";
+import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -19,8 +21,8 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     width: "90%",
-    height: "80%",
-    backgroundColor: "#39445a",
+    height: "90%",
+    backgroundColor: "rgba(0, 0, 0, 0.87)",
     border: "1px solid #282c34",
     borderRadius: 10,
     color: "white",
@@ -29,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Model({ children, media_type, id }) {
+export default function Model({ c, children, media_type, id }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [content, setContent] = useState();
@@ -37,7 +39,8 @@ export default function Model({ children, media_type, id }) {
   const [season, setSeason] = useState();
   const [ep, setEp] = useState();
   const history = useHistory();
-
+  const [style, setStyle] = useState({});
+  const [fliped, setFliped] = useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
@@ -76,11 +79,53 @@ export default function Model({ children, media_type, id }) {
     // eslint-disable-next-line
   }, []);
 
+  const onHover = () => {
+    setFliped(true);
+  };
+
+  const onLeave = () => {
+    setFliped(false);
+    setStyle({});
+  };
+
+  // const museOver = () => {
+  //   setStyle({
+  //     color: "white",
+  //     curser: "pointer",
+  //   });
+  // };
   return (
-    <div className="col-10 px-md-3 col-md-4 col-lg-3">
-      <div className="media mx-auto" type="button" onClick={handleOpen}>
-        {children}
-      </div>
+    <div className="position-relative col-10 px-md-3 col-md-4 col-lg-3">
+      <ReactCardFlip
+        flipSpeedBackToFront={0.2}
+        flipSpeedFrontToBack={0.2}
+        isFlipped={fliped == true ? fliped : false}
+        flipDirection="horizontal"
+      >
+        <div onMouseEnter={onHover} className="media mx-auto" type="button">
+          {children}
+        </div>
+        <div
+          onClick={handleOpen}
+          style={style}
+          className="media mx-auto"
+          onMouseOut={onLeave}
+        >
+          <h4 className="text-center">{c?.original_title}</h4>
+          <p className="desc">Vote: {c?.vote_average}</p>
+          <p className="desc">Lamguage: {c?.original_language}</p>
+          <p className="desc">Release: {c?.release_date}</p>
+          {/* <img
+            src={
+              c.poster_path
+                ? `${img_500}/${c.poster_path}`
+                : unavailableLandscape
+            }
+            className="ContentModal__landscape"
+          /> */}
+          {c && console.log(c)}
+        </div>
+      </ReactCardFlip>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

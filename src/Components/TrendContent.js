@@ -4,6 +4,7 @@ import { Badge } from "@material-ui/core";
 import Model from "../Model/Model";
 
 const TrendContent = ({
+  content,
   id,
   poster,
   title,
@@ -12,7 +13,7 @@ const TrendContent = ({
   vote_average,
 }) => {
   return (
-    <Model className="mx-auto" media_type={media_type} id={id}>
+    <Model className="mx-auto" c={content} media_type={media_type} id={id}>
       <Badge
         badgeContent={vote_average}
         color={vote_average > 6 ? "primary" : "secondary"}
