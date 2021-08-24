@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TrendContent from "../Components/TrendContent";
 import Paginationn from "../Components/Pagination/Paginationn";
+import { img_500 } from "../config/config";
 
 const Trending = (props) => {
   const [page, setPage] = useState(1);
@@ -18,9 +19,19 @@ const Trending = (props) => {
     fetchTrending();
     // eslint-disable-next-line
   }, [page]);
+  const styles = {
+    backgroundImage: `linear-gradient(to right, rgba(218,165,32, 0.52), rgba(255,215,0, 0.4)),url(${
+      img_500 + content[0]?.backdrop_path
+    })`,
+    backgroundSize: "100% 100%",
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+  };
 
   return (
     <div>
+      <div style={styles} className="main"></div>
+      {content[0] ? console.log(content[0]) : ""}
       <span className="pagesTitle">Trending</span>
       <div className="trending">
         {content &&
