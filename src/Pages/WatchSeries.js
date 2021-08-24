@@ -44,14 +44,14 @@ const WatchSeries = () => {
   }, [id]);
   return (
     <>
-      {/* <Iframe
+      <Iframe
         className="frame"
         url={`https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=${seasonNumber}&e=${episode}`}
         width="100%"
         height="100%"
         allowFullScreen
         frameBorder="0"
-      /> */}
+      />
 
       <div className="d-flex my-3">
         <div className="col-3">
