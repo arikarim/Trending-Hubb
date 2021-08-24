@@ -10,7 +10,8 @@ const WatchSeries = () => {
   const [seasons, setSeasons] = useState([]);
   const [episodes, setEpisodes] = useState([]);
   const { id, season, ep } = useParams();
-  const [seasonNumber, setSeasonNumber] = useState(season);
+  const [episode, setEpisode] = useState(1);
+  const [seasonNumber, setSeasonNumber] = useState(1);
 
   const fetchSeriesdetails = async (tv_id) => {
     try {
@@ -28,7 +29,6 @@ const WatchSeries = () => {
         `https://api.themoviedb.org/3/tv/${tv_id}/season/${seasonNumber}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
       );
       setEpisodes(data.data.episodes);
-      console.log(data.data);
     } catch (e) {
       console.log(e);
     }
@@ -37,26 +37,24 @@ const WatchSeries = () => {
     setSeasonNumber(e.target.id);
     fetchEpisodes(id, e.target.id);
   };
-  // useEffect(() => {
-  //   fetchEpisodes(id, seasonId);
-  // }, [id, seasonId]);
+  useEffect(() => {}, [id, seasonNumber, episode]);
   useEffect(() => {
     fetchSeriesdetails(id);
     fetchEpisodes(id, 1);
   }, [id]);
   return (
     <>
-      {/* <Iframe
+      <Iframe
         className="frame"
-        url={`https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=${seasonNumber}&e=${ep}`}
+        url={`https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=${seasonNumber}&e=${episode}`}
         width="100%"
         height="100%"
         allowFullScreen
         frameBorder="0"
-      /> */}
+      />
 
       <div className="d-flex my-3">
-        <div className="col-4">
+        <div className="col-3">
           <ul className="list-unstyled seasons">
             {seasons.map((s, i) => (
               <li id={i + 1} onClick={(e) => onUpdate(e)} key={s.id}>{`Season ${
@@ -66,12 +64,15 @@ const WatchSeries = () => {
           </ul>
         </div>
 
-        <div className="col-8">
-          <ul className="list-unstyled d-flex flex-wrap episodes">
+        <div className="col-9">
+          <ul className="my-2 list-unstyled d-flex justify-content-around flex-wrap episodes">
             {episodes.map((e, i) => (
-              <li className="col-6" key={e.id}>{`Episode ${i + 1}: ${
-                e.name
-              }`}</li>
+              <li
+                onClick={(e) => setEpisode(e.target.id)}
+                id={i + 1}
+                className="col-5"
+                key={e.id}
+              >{`Episode ${i + 1}: ${e.name}`}</li>
             ))}
           </ul>
           {episodes && console.log(episodes)}
