@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/Trending-Hubb/static/css/main.78224c36.chunk.css",
-    "main.js": "/Trending-Hubb/static/js/main.d31f3f39.chunk.js",
-    "main.js.map": "/Trending-Hubb/static/js/main.d31f3f39.chunk.js.map",
+    "main.js": "/Trending-Hubb/static/js/main.57a1e509.chunk.js",
+    "main.js.map": "/Trending-Hubb/static/js/main.57a1e509.chunk.js.map",
     "runtime-main.js": "/Trending-Hubb/static/js/runtime-main.416ebecf.js",
     "runtime-main.js.map": "/Trending-Hubb/static/js/runtime-main.416ebecf.js.map",
     "static/css/2.af3ab7ac.chunk.css": "/Trending-Hubb/static/css/2.af3ab7ac.chunk.css",
-    "static/js/2.824e016e.chunk.js": "/Trending-Hubb/static/js/2.824e016e.chunk.js",
-    "static/js/2.824e016e.chunk.js.map": "/Trending-Hubb/static/js/2.824e016e.chunk.js.map",
+    "static/js/2.511190fa.chunk.js": "/Trending-Hubb/static/js/2.511190fa.chunk.js",
+    "static/js/2.511190fa.chunk.js.map": "/Trending-Hubb/static/js/2.511190fa.chunk.js.map",
     "index.html": "/Trending-Hubb/index.html",
     "service-worker.js": "/Trending-Hubb/service-worker.js",
     "service-worker.js.map": "/Trending-Hubb/service-worker.js.map",
     "static/css/2.af3ab7ac.chunk.css.map": "/Trending-Hubb/static/css/2.af3ab7ac.chunk.css.map",
     "static/css/main.78224c36.chunk.css.map": "/Trending-Hubb/static/css/main.78224c36.chunk.css.map",
-    "static/js/2.824e016e.chunk.js.LICENSE.txt": "/Trending-Hubb/static/js/2.824e016e.chunk.js.LICENSE.txt"
+    "static/js/2.511190fa.chunk.js.LICENSE.txt": "/Trending-Hubb/static/js/2.511190fa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.416ebecf.js",
     "static/css/2.af3ab7ac.chunk.css",
-    "static/js/2.824e016e.chunk.js",
+    "static/js/2.511190fa.chunk.js",
     "static/css/main.78224c36.chunk.css",
-    "static/js/main.d31f3f39.chunk.js"
+    "static/js/main.57a1e509.chunk.js"
   ]
 }
