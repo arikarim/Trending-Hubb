@@ -53,9 +53,9 @@ const WatchSeries = () => {
         frameBorder="0"
       />
 
-      <div className="d-flex my-3">
-        <div className="col-3">
-          <ul className="list-unstyled seasons">
+      <div className="d-flex flex-column flex-md-row my-3">
+        <div className="col-12 col-md-3">
+          <ul className="d-flex flex-md-column flex-wrap list-unstyled seasons">
             {seasons.map((s, i) => (
               <li id={i + 1} onClick={(e) => onUpdate(e)} key={s.id}>{`Season ${
                 i + 1
@@ -64,7 +64,7 @@ const WatchSeries = () => {
           </ul>
         </div>
 
-        <div className="col-9">
+        <div className="col-12 col-md-9">
           <ul className="my-2 list-unstyled d-flex justify-content-around flex-wrap episodes">
             {episodes.map((e, i) => (
               <li
