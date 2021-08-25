@@ -23,6 +23,7 @@ const Watch = () => {
         {popular &&
           popular.map((c, key) => (
             <TrendContent
+              content={c}
               key={c.id}
               id={c.id}
               poster={c.poster_path}
@@ -33,7 +34,6 @@ const Watch = () => {
             />
           ))}
       </div>
-      {popular && console.log(popular)}
     </>
   );
 };

@@ -62,7 +62,6 @@ const WatchSeries = () => {
               }`}</li>
             ))}
           </ul>
-          {seasons && console.log(seasons)}
         </div>
 
         <div className="col-9">
@@ -83,6 +82,7 @@ const WatchSeries = () => {
         {popular &&
           popular.map((c, key) => (
             <TrendContent
+              content={c}
               key={c.id}
               id={c.id}
               poster={c.poster_path}

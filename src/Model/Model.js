@@ -9,9 +9,8 @@ import { Button } from "@material-ui/core";
 import { YouTube } from "@material-ui/icons";
 import "./Model.css";
 import Carousel from "../Components/carousel/Carousel";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ReactCardFlip from "react-card-flip";
-import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -36,10 +35,6 @@ export default function Model({ c, children, media_type, id }) {
   const [open, setOpen] = React.useState(false);
   const [content, setContent] = useState();
   const [video, setVideo] = useState();
-  const [season, setSeason] = useState();
-  const [ep, setEp] = useState();
-  const history = useHistory();
-  // const [style, setStyle] = useState({});
   const [fliped, setFliped] = useState(false);
   const handleOpen = () => {
     setOpen(true);

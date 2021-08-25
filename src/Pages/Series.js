@@ -28,17 +28,19 @@ const Series = (props) => {
     // eslint-disable-next-line
   }, [page, selectedGenres]);
 
+  const getRandom = (array) => {
+    const randomElement = array[Math.floor(Math.random() * array.length)];
+    return randomElement;
+  };
+
   const styles = {
     backgroundImage: `url(${img_500}${
-      content[0]?.backdrop_path || content[1]?.backdrop_path
+      getRandom(content)?.backdrop_path || getRandom(content)?.backdrop_path
     })`,
     backgroundSize: "100% 100%",
     backgroundRepeat: "no-repeat",
     width: "100%",
   };
-  {
-    content && console.log(content);
-  }
   return (
     <div>
       <div style={styles} className="main"></div>
