@@ -45,8 +45,9 @@ const WatchSeries = () => {
   return (
     <>
       <Iframe
+      // https://2embed.org/embed/movie?
         className="frame"
-        url={`https://www.2embed.ru/embed/tmdb/tv?id=${id}&s=${seasonNumber}&e=${episode}`}
+        url={`https://2embed.org/embed/tv?id=${id}&s=${seasonNumber}&e=${episode}`}
         width="100%"
         height="100%"
         allowFullScreen
