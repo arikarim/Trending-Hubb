@@ -12,7 +12,7 @@ const Watch = () => {
     <>
       <Iframe
         className="frame"
-        url={`https://2embed.org/embed/movie?id=${id}`}
+        url={` https://www.2embed.cc/embed/${id}`}
         width="100%"
         height="100%"
         allowFullScreen
